@@ -1,0 +1,26 @@
+public class Main {
+    public static void main(String[] args) {
+        BsBaralho organizador = new BsBaralho();
+
+        Carta[] baralho = {
+            new Carta(12, "copas"),
+            new Carta(10, "paus"),
+            new Carta(7, "ouros"),
+            new Carta(9, "Copas"),
+            new Carta(3, "espadas")};
+
+        System.out.println( "Baralho Desordenado");
+            for(Carta b : baralho) {
+                System.out.println(b);
+            }
+            
+        System.out.println();
+        System.out.println("------Baralho ordenado------");    
+        organizador.ordenaMao(baralho);
+        for(Carta c : baralho) {
+            System.out.println(c);
+        }  
+
+
+    }
+}

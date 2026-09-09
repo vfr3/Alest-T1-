@@ -10,7 +10,7 @@ public class Main {
             new Carta(7, "espadas")
         };
         
-        System.out.println( ".......BARALHO DESORDENADO........");
+        System.out.println( ".......BARALHO ORIGINAL........");
             for(Carta b : baralho) {
                 System.out.println(b);
             }

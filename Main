@@ -5,22 +5,68 @@ public class Main {
         Carta[] baralho = {
             new Carta(12, "copas"),
             new Carta(10, "paus"),
-            new Carta(7, "ouros"),
+            new Carta(3, "ouros"),
             new Carta(9, "Copas"),
-            new Carta(3, "espadas")};
-
-        System.out.println( "Baralho Desordenado");
+            new Carta(7, "espadas")
+        };
+        
+        System.out.println( ".......BARALHO DESORDENADO........");
             for(Carta b : baralho) {
                 System.out.println(b);
             }
-            
+
         System.out.println();
-        System.out.println("------Baralho ordenado------");    
+        System.out.println("......BARALHO ORDENADO.......");
+
         organizador.ordenaMao(baralho);
         for(Carta c : baralho) {
             System.out.println(c);
-        }  
+        }
+        
+        Carta[] piorCaso = {
+            new Carta(12, "copas"),
+            new Carta(10, "paus"),
+            new Carta(9, "Copas"),
+            new Carta(7, "espadas"),
+            new Carta(3, "ouros")
+        };
+    
+        Carta[] melhorCaso = {
+            new Carta(3, "ouros"),
+            new Carta(7, "espadas"),
+            new Carta(9, "Copas"),
+            new Carta(10, "paus"),
+            new Carta(12, "copas")
+        };
+
+        System.out.println();
+        System.out.println(".......TESTE DO PIOR CASO......");
+        for(Carta p : piorCaso){
+            System.out.println(p);
+        }
+
+        System.out.println();
+        System.out.println("......PIOR CASO ORDENADO......");
+        organizador.ordenaMao(piorCaso);
+        for(Carta p: piorCaso) {
+            System.out.println(p);
+        }
+
+        System.out.println();
+        System.out.println(".....TESTE DO MELHOR CASO (Já Ordenado).....");
+        for(Carta m : melhorCaso) {
+            System.out.println(m);
+        }
+        
+
+        System.out.println();
+        System.out.println(".......MELHOR CASO.....");
+        organizador.ordenaMao(melhorCaso);
+        for(Carta m : melhorCaso) {
+            System.out.println(m);
+        }
 
 
+        
     }
 }

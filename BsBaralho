@@ -3,11 +3,14 @@ public class BsBaralho {
     public void ordenaMao(Carta[] baralho) {    
         int num = baralho.length;
         boolean troca;
+        int trocas = 0;
+        int comparacoes = 0;
 
         for(int i = 0; i < num - 1; i++) {
             troca = false;
 
             for(int j = 0; j < num - i - 1; j++) {
+                comparacoes++;
                 if(baralho[j].getValor() > baralho[j + 1].getValor()){
 
                     Carta copia = baralho[j];
@@ -15,11 +18,13 @@ public class BsBaralho {
                     baralho[j + 1] = copia;
 
                     troca = true;
+                    trocas++;
                 }
             }
 
             if(troca == false) 
-            return;
-        } 
+            break;
+        }
+        System.out.println("Quantidade de comparações: " + comparacoes + " Quantidade de trocas: " +trocas); 
     }  
 }
